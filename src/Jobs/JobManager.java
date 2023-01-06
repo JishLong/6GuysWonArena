@@ -7,7 +7,7 @@ import java.util.concurrent.Future;
 /* Manages all jobs that run on threads separate to the main game thread
 
    Asynchronous jobs - meant to run on their own, completely independent of the main game loop
-   Synchronous jobs - meant to in cooperation with the main game loop - if a synchronous job is scheduled, the game
+   Synchronous jobs - meant to run in cooperation with the main game loop - if a synchronous job is scheduled, the game
    loop will not advance to the next tick until it has completed
  */
 public class JobManager
