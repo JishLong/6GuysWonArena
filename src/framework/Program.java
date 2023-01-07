@@ -1,7 +1,7 @@
-package Framework;
+package framework;
 
-import Jobs.JobManager;
-import Jobs.ManageJobsJob;
+import jobs.JobManager;
+import jobs.ManageJobsJob;
 
 // The backbone of the codebase - contains the starting and ending points of the game
 public class Program

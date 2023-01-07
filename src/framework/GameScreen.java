@@ -1,4 +1,6 @@
-package Framework;
+package framework;
+
+import resources.Globals;
 
 import javax.swing.*;
 import java.awt.*;
@@ -20,7 +22,8 @@ class GameScreen
     void draw ()
     {
         // Create a back buffer
-        Image bufferImage = screen.getGraphicsConfiguration().createCompatibleImage(500, 500);
+        Image bufferImage = screen.getGraphicsConfiguration().createCompatibleImage(
+                Globals.screenBounds.width, Globals.screenBounds.height);
         Graphics bufferGraphics = bufferImage.getGraphics();
 
         // Draw everything to the back buffer

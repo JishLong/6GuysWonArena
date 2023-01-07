@@ -1,4 +1,4 @@
-package Toolbox;
+package toolbox;
 
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
@@ -6,11 +6,9 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Random;
 
+// A collection of useful methods relating to files for use across the whole codebase
 public class FileTools
 {
-    // This class is just a collection of useful methods - as such, it shouldn't be instantiated
-    private FileTools () {}
-
     // Returns a random line from a file as a Unicode string - each line has an equal chance of being picked
     public static String getRandomLineFromFile (String pathname)
     {
@@ -29,4 +27,7 @@ public class FileTools
 
         return line;
     }
+
+    // This class is just a collection of useful methods - as such, it shouldn't be instantiated
+    private FileTools () {}
 }

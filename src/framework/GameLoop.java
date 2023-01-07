@@ -1,6 +1,6 @@
-package Framework;
+package framework;
 
-import Jobs.JobManager;
+import jobs.JobManager;
 
 // The game loop - performs data updates and rendering once every tick
 class GameLoop

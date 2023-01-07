@@ -1,4 +1,4 @@
-package Jobs;
+package jobs;
 
 // The "master" job - manages all other jobs as long as the JobManager hasn't yet been shutdown
 public class ManageJobsJob implements Runnable

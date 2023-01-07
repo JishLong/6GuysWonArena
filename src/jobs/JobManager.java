@@ -1,4 +1,4 @@
-package Jobs;
+package jobs;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -55,10 +55,7 @@ public class JobManager
     {
         for (int i = incompleteSyncJobs.size() - 1; i >= 0; i--)
         {
-            if (incompleteSyncJobs.get(i).isDone()) {
-                incompleteSyncJobs.remove(i);
-                System.out.println("complete");
-            }
+            if (incompleteSyncJobs.get(i).isDone()) incompleteSyncJobs.remove(i);
         }
 
         jobScheduler.optimizeThreadPool();

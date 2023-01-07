@@ -1,7 +1,9 @@
-package Framework;
+package framework;
 
-import Toolbox.FileTools;
-
+import jobs.JobManager;
+import jobs.rendering.CalculateBoundsJob;
+import resources.Globals;
+import toolbox.FileTools;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -11,13 +13,15 @@ import java.awt.image.BufferedImage;
 class GameWindow extends WindowAdapter
 {
     private final JFrame window;
+    private final JPanel screen;
 
     GameWindow (GameScreen gameScreen)
     {
         window = new JFrame();
+        screen = gameScreen.getScreen();
 
         window.setVisible(false);
-        window.add(gameScreen.getScreen());
+        window.add(screen);
 
         initialize();
     }
@@ -50,7 +54,7 @@ class GameWindow extends WindowAdapter
     }
 
     // Called when the game window is closed
-    private static final WindowListener CLOSE_OPERATION = new WindowAdapter()
+    private final WindowListener CLOSE_OPERATION = new WindowAdapter()
     {
         @Override
         public void windowClosing(WindowEvent e)
@@ -60,11 +64,12 @@ class GameWindow extends WindowAdapter
     };
 
     // Called every time the game window is resized
-    private static final ComponentListener RESIZE_OPERATION = new ComponentAdapter()
+    private final ComponentListener RESIZE_OPERATION = new ComponentAdapter()
     {
         public void componentResized(ComponentEvent componentEvent)
         {
-
+            Globals.screenBounds = screen.getBounds();
+            JobManager.getInstance().scheduleSyncJob(new CalculateBoundsJob());
         }
     };
 }

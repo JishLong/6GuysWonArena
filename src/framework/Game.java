@@ -1,5 +1,6 @@
-package Framework;
+package framework;
 
+import resources.Globals;
 import java.awt.*;
 
 // An abstracted version of the game that sits atop the framework - the heart of the game
@@ -31,7 +32,11 @@ public class Game
     // Rendering that occurs once every tick
     void draw(Graphics g)
     {
+        g.setColor(Color.YELLOW);
+        g.fillRect(Globals.gameBounds.x, Globals.gameBounds.y, Globals.gameBounds.width,
+                Globals.gameBounds.height);
         g.setColor(Color.RED);
-        g.fillRect(0, 0, 200, 200);
+        g.fillRect(Globals.guiBounds.x, Globals.guiBounds.y, Globals.guiBounds.width,
+                Globals.guiBounds.height);
     }
 }

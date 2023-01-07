@@ -1,4 +1,4 @@
-package Jobs;
+package jobs;
 
 import java.util.concurrent.Future;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
